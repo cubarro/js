@@ -1,0 +1,103 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Dosis:wght@200&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main{
+  display: grid;
+  padding: 10px;
+  gap: 20px ;
+  font-family: 'Dosis',   sans-serif;
+}
+
+/* Primera sección */
+/* formulario */
+
+#formContainer{
+  /* background-color: rgb(190, 190, 190); */
+  padding: 20px;
+  box-shadow: 5px 5px 20px gray;
+}
+#formContainer > h1{
+ text-align: center;
+ margin-bottom: 20px;
+ font-family: 'Bungee Shade',
+ cursive;
+ font-size: 2em;
+}
+
+#formContainer > form{
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
+#formContainer > form > input{
+ padding: 8px;
+ border-radius: 6px;
+ border: 2px solid rgb(211, 211, 211);
+}
+
+#formContainer > form > button{
+  color:white ;
+  background-color: rgb(88, 88, 88);
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 50px;
+  border: none;
+}
+#formContainer > form > button:hover{
+  background-color: rgb(15, 0, 102);
+  cursor: pointer;
+  transform: scale(0.9);
+
+}
+
+/* tabla */
+/* #tableContainer{
+  background-color: rgb(228, 228, 228);
+} */
+
+table, td, th, tr {
+  border: 1px solid gray;
+  border-collapse: collapse ;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: rgb(100, 100, 100);
+  color: white;
+  padding: 10px 5px;
+}
+
+td {
+  padding: 10px 5px;
+}
+
+/* breakponints ccs3schools */
+/* https: //www.w3schools.com/howto/howto_css_media_query_breakpoints.asp */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(237, 237, 253);
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 640px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}

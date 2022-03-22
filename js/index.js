@@ -76,6 +76,7 @@ function btnAddUser (e) {
   // alert(newUser)
   const tr = createRow( newUser )
   tbody.appendChild( tr )
+  alert('Se agregó el registro ' + iNombre.value)
   e.preventDefault()
 }
 
@@ -83,7 +84,12 @@ function btnUpdateUser (e, i) {
   updateUser(i, iNombre.value, iEmail.value, iPassword.value )
   clearTable()
   fillTable()
-  btnAddUpdate.textContent = 'Enviar'
+  alert('Se actualizó el registro ' + iNombre.value )
+  iNombre.value = ''
+  iEmail.value = ''
+  iPassword.value = ''
+  btnAddUpdate.textContent = 'Agregar'
+  btnAddUpdate.onclick = btnAddUser
   e.preventDefault()
 }
 

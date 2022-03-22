@@ -98,6 +98,6 @@ td {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 640px) {
   main {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.8fr;
   }
 }

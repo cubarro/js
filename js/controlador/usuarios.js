@@ -20,3 +20,7 @@ function updateUser( i, nvoNombre, nvoEmail, nvoClave ) {
   users[i].email = nvoEmail
   users[i].password = nvoClave
 }
+
+function deleteUser(i){
+  users.splice(i, 1)
+}

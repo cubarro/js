@@ -9,7 +9,7 @@ const iPassword = document.querySelector('#iPassword')
 + C Crear 
 + R Leer 
 + U Actualizar
-  D Borrar
++ D Borrar
  */
 btnAddUpdate.onclick = btnAddUser
 
@@ -25,6 +25,14 @@ function createRow(u, i){
   const tdDelete = document.createElement('td')
   const iDelete = document.createElement('i')
   iDelete.className = 'fas fa-trash'
+  iDelete.onclick =  () => {
+    const confirmo = confirm('¿Borrar ' + u.nombre + '?' )
+    if (confirmo){
+      deleteUser(i)
+      clearTable()
+      fillTable()
+    }
+  }
 
   // Actualizar
   const tdUpdate = document.createElement('td')
@@ -96,3 +104,4 @@ function fillTable () {
   // Meter estructura de datos en tbody
   tbody.append(...trs)
 }
+

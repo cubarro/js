@@ -2,6 +2,36 @@ const body = document.querySelector('body')
 const tbody = document.querySelector('tbody')
 
 body.onload = () => {
+
+  // const users = getUsers()
+  // console.log(users)
+
+  users.forEach( (e) => {
+    // console.log(e)
+    const tr = createRow()
+    // Meter estructura de datos en tbody
+    tbody.appendChild(tr)
+  } )
+
+  
+}
+
+  // <tr>
+  //   <td>
+  //      <i class="fas fa-trash"></i>
+  //     <img  src="./img/trash-solid.svg" width="20%" alt="borrar">
+  //   </td>
+  //   <td>
+  //      <i class="fas fa-pen"></i>
+  //     <img src="./img/pen-solid.svg" width="20%" alt="editar"></i>
+  //   </td>
+  //   <td>Corlos Pacheco</td>
+  //   <td>pache@yahoo.com</td>
+  //   <td>abc1234</td>
+  // </tr>
+
+
+function createRow(){
   // alert('hola')
   const tr       = document.createElement('tr')
 
@@ -31,20 +61,7 @@ body.onload = () => {
   tdDelete.appendChild(iDelete)
   tdUpdate.appendChild(iUpdate)
   tr.append(tdDelete, tdUpdate, tdNombre, tdCorreo, tdPassword)
-  // Meter estructura de datos en tbody
-  tbody.appendChild(tr)
-}
 
-  // <tr>
-  //   <td>
-  //      <i class="fas fa-trash"></i>
-  //     <img  src="./img/trash-solid.svg" width="20%" alt="borrar">
-  //   </td>
-  //   <td>
-  //      <i class="fas fa-pen"></i>
-  //     <img src="./img/pen-solid.svg" width="20%" alt="editar"></i>
-  //   </td>
-  //   <td>Corlos Pacheco</td>
-  //   <td>pache@yahoo.com</td>
-  //   <td>abc1234</td>
-  // </tr>
+  return tr
+
+}

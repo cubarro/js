@@ -6,9 +6,9 @@ body.onload = () => {
   // const users = getUsers()
   // console.log(users)
 
-  users.forEach( (e) => {
+  users.forEach( (u) => {
     // console.log(e)
-    const tr = createRow()
+    const tr = createRow(u)
     // Meter estructura de datos en tbody
     tbody.appendChild(tr)
   } )
@@ -31,7 +31,7 @@ body.onload = () => {
   // </tr>
 
 
-function createRow(){
+function createRow(u){
   // alert('hola')
   const tr       = document.createElement('tr')
 
@@ -47,15 +47,15 @@ function createRow(){
   
   // Nombre
   const tdNombre = document.createElement('td')
-  tdNombre.textContent = 'Corlos Pacheco'
+  tdNombre.textContent = u.nombre
 
   // Email
   const tdCorreo = document.createElement('td')
-  tdCorreo.textContent = 'pache@yahoo.com'
+  tdCorreo.textContent = u.email
 
   // Password
   const tdPassword  = document.createElement('td')
-  tdPassword.textContent = 'abc1234'
+  tdPassword.textContent = u.password
 
   // Insertar estructura de usuario en la página
   tdDelete.appendChild(iDelete)

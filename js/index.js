@@ -1,6 +1,13 @@
 const body = document.querySelector('body')
 const tbody = document.querySelector('tbody')
 
+/* 
+  C Crear 
++ R Leer 
+  U Actualizar
+  D Borrar
+ */
+
 body.onload = () => {
 
   // const users = getUsers()

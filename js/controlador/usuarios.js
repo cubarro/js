@@ -14,3 +14,9 @@ function createUser( nombre, email, password ) {
   users.push(newUser)
   return newUser
 }
+
+function updateUser( i, nvoNombre, nvoEmail, nvoClave ) {
+  users[i].nombre = nvoNombre
+  users[i].email = nvoEmail
+  users[i].password = nvoClave
+}

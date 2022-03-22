@@ -18,16 +18,16 @@ body.onload = () => {
   // console.log(users)
   let trs = []
 
-  users.forEach( (u) => {
+  users.forEach( (u, i) => {
     // console.log(e)
-    const tr = createRow(u)
+    const tr = createRow(u, i)
     trs.push(tr)
   } )
   // Meter estructura de datos en tbody
   tbody.append(...trs)
 }
 
-function createRow(u){
+function createRow(u, i){
   // alert('hola')
   const tr       = document.createElement('tr')
 
@@ -40,6 +40,9 @@ function createRow(u){
   const tdUpdate = document.createElement('td')
   const iUpdate = document.createElement('i')
   iUpdate.className = 'fas fa-pen'
+  iUpdate.onclick = () => {
+    alert( 'Actualizar ' + i  )
+  }
   
   // Nombre
   const tdNombre = document.createElement('td')
@@ -63,6 +66,8 @@ function createRow(u){
 }
 
 btnAddUpdate.onclick = (e) => {
+  // https://youtu.be/kXt_55factU?t=3981
+  const i = getUsers().length
   // https://youtu.be/kXt_55factU?t=3113
   const newUser = createUser( iNombre.value, iEmail.value, iPassword.value ) 
   // alert(newUser)

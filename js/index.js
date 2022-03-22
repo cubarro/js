@@ -26,6 +26,13 @@ body.onload = () => {
   // Password
   const tdPassword  = document.createElement('td')
   tdPassword.textContent = 'abc1234'
+
+  // Insertar estructura de usuario en la página
+  tdDelete.appendChild(iDelete)
+  tdUpdate.appendChild(iUpdate)
+  tr.append(tdDelete, tdUpdate, tdNombre, tdCorreo, tdPassword)
+  // Meter estructura de datos en tbody
+  tbody.appendChild(tr)
 }
 
   // <tr>

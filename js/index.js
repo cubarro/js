@@ -1,8 +1,12 @@
 const body = document.querySelector('body')
 const tbody = document.querySelector('tbody')
+const btnAddUpdate = document.querySelector('#btnAddUpdate')
+const iNombre   = document.querySelector('#iNombre')
+const iEmail    = document.querySelector('#iEmail')
+const iPassword = document.querySelector('#iPassword')
 
 /* 
-  C Crear 
++ C Crear 
 + R Leer 
   U Actualizar
   D Borrar
@@ -21,8 +25,6 @@ body.onload = () => {
   } )
   // Meter estructura de datos en tbody
   tbody.append(...trs)
-  
-  
 }
 
 function createRow(u){
@@ -43,9 +45,9 @@ function createRow(u){
   const tdNombre = document.createElement('td')
   tdNombre.textContent = u.nombre
 
-  // Email
-  const tdCorreo = document.createElement('td')
-  tdCorreo.textContent = u.email
+  // Email https://youtu.be/kXt_55factU
+  const tdEmail  = document.createElement('td')
+  tdEmail.textContent = u.email 
 
   // Password
   const tdPassword  = document.createElement('td')
@@ -54,8 +56,17 @@ function createRow(u){
   // Insertar estructura de usuario en la página
   tdDelete.appendChild(iDelete)
   tdUpdate.appendChild(iUpdate)
-  tr.append(tdDelete, tdUpdate, tdNombre, tdCorreo, tdPassword)
+  tr.append(tdDelete, tdUpdate, tdNombre, tdEmail, tdPassword)
 
   return tr
 
+}
+
+btnAddUpdate.onclick = (e) => {
+  // https://youtu.be/kXt_55factU?t=3113
+  const newUser = createUser( iNombre.value, iEmail.value, iPassword.value ) 
+  // alert(newUser)
+  const tr = createRow( newUser )
+  tbody.appendChild( tr )
+  e.preventDefault()
 }

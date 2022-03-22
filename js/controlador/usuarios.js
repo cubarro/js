@@ -8,3 +8,9 @@ const users = [
 function getUsers() {
   return users
 }
+
+function createUser( nombre, email, password ) {
+  const newUser = new User( nombre, email, password )
+  users.push(newUser)
+  return newUser
+}

@@ -8,23 +8,13 @@ const iPassword = document.querySelector('#iPassword')
 /* 
 + C Crear 
 + R Leer 
-  U Actualizar
++ U Actualizar
   D Borrar
  */
+btnAddUpdate.onclick = btnAddUser
 
 body.onload = () => {
-
-  // const users = getUsers()
-  // console.log(users)
-  let trs = []
-
-  users.forEach( (u, i) => {
-    // console.log(e)
-    const tr = createRow(u, i)
-    trs.push(tr)
-  } )
-  // Meter estructura de datos en tbody
-  tbody.append(...trs)
+  fillTable()
 }
 
 function createRow(u, i){
@@ -41,7 +31,12 @@ function createRow(u, i){
   const iUpdate = document.createElement('i')
   iUpdate.className = 'fas fa-pen'
   iUpdate.onclick = () => {
-    alert( 'Actualizar ' + i  )
+    // alert( 'Actualizar ' + i + ' ' + u.nombre )
+    btnAddUpdate.textContent = 'Actualizar'
+    iNombre.value = u.nombre
+    iEmail.value = u.email
+    iPassword.value = u.password
+    btnAddUpdate.onclick = (e) => btnUpdateUser(e, i)
   }
   
   // Nombre
@@ -65,7 +60,7 @@ function createRow(u, i){
 
 }
 
-btnAddUpdate.onclick = (e) => {
+function btnAddUser (e) {
   // https://youtu.be/kXt_55factU?t=3981
   const i = getUsers().length
   // https://youtu.be/kXt_55factU?t=3113
@@ -74,4 +69,30 @@ btnAddUpdate.onclick = (e) => {
   const tr = createRow( newUser )
   tbody.appendChild( tr )
   e.preventDefault()
+}
+
+function btnUpdateUser (e, i) {
+  updateUser(i, iNombre.value, iEmail.value, iPassword.value )
+  clearTable()
+  fillTable()
+  btnAddUpdate.textContent = 'Enviar'
+  e.preventDefault()
+}
+
+function clearTable () {
+  tbody.innerHTML = ''
+}
+
+function fillTable () {
+  // const users = getUsers()
+  // console.log(users)
+  let trs = []
+  const users = getUsers()
+  users.forEach( (u, i) => {
+    // console.log(e)
+    const tr = createRow(u, i)
+    trs.push(tr)
+  } )
+  // Meter estructura de datos en tbody
+  tbody.append(...trs)
 }

@@ -12,31 +12,18 @@ body.onload = () => {
 
   // const users = getUsers()
   // console.log(users)
+  let trs = []
 
   users.forEach( (u) => {
     // console.log(e)
     const tr = createRow(u)
-    // Meter estructura de datos en tbody
-    tbody.appendChild(tr)
+    trs.push(tr)
   } )
-
+  // Meter estructura de datos en tbody
+  tbody.append(...trs)
+  
   
 }
-
-  // <tr>
-  //   <td>
-  //      <i class="fas fa-trash"></i>
-  //     <img  src="./img/trash-solid.svg" width="20%" alt="borrar">
-  //   </td>
-  //   <td>
-  //      <i class="fas fa-pen"></i>
-  //     <img src="./img/pen-solid.svg" width="20%" alt="editar"></i>
-  //   </td>
-  //   <td>Corlos Pacheco</td>
-  //   <td>pache@yahoo.com</td>
-  //   <td>abc1234</td>
-  // </tr>
-
 
 function createRow(u){
   // alert('hola')
